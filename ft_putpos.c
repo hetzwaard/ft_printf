@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   format_integer.c                                   :+:    :+:            */
+/*   ft_putpos.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/26 23:35:58 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/10/26 23:35:58 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/10/27 16:21:42 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/10/27 16:21:42 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	format_integer(va_list args)
+int	ft_putpos(unsigned long int arg, const char c)
 {
-	int		num;
-	int		len;
-	char	*str;
+	int	i;
+	int	len;
 
-	num = va_arg(args, int);
-	str = ft_itoa(num);
-	len = write(1, str, ft_strlen(str));
-	free(str);
+	len = 0;
+	i = arg % 16;
+	if (arg >= 16)
+		len += ft_putpos(arg / 16, c);
+	if (i < 10)
+		i += 48;
+	else
+	{
+		if (c == 'X')
+			i += 55;
+		else
+			i += 87;
+	}
+	len += write(1, &i, 1);
 	return (len);
 }

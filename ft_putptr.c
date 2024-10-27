@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   format_string.c                                    :+:    :+:            */
+/*   ft_putptr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/26 23:40:53 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/10/26 23:40:53 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/10/27 16:19:37 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/10/27 16:19:37 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
 
-int	format_string(va_list args)
+int	ft_putptr(va_list arg)
 {
-	char	*str;
+	unsigned long int	p;
 
-	str = va_arg(args, char *);
-	if (str == NULL)
-		return (write(1, "(null)", 6));
-	return (write(1, str, ft_strlen(str)));
+	p = va_arg(arg, unsigned long int);
+	if (!p || p == 0)
+		return (ft_putstr("(nil)"));
+	return (write(1, "0x", 2) + ft_putpos(p, 'p'));
 }

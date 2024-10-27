@@ -12,8 +12,8 @@
 
 NAME = libftprintf.a
 
-SRCS			=	format_char.c  format_integer.c  format_string.c  ft_itoa.c  ft_printf.c  \
-					ft_strlen.c  
+SRCS			=	ft_printf.c  ft_putchar.c  ft_puthexadecimal.c  ft_putnbr.c  \
+					ft_putpos.c  ft_putptr.c  ft_putstr.c  ft_putunsigned.c  ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 
