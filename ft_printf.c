@@ -26,9 +26,9 @@ static int	ft_format(va_list arg, char format)
 	if (format == 'd' || format == 'i')
 		len = ft_putnbr(va_arg(arg, int));
 	if (format == 'u')
-		len = ft_putunsigned(va_arg(arg, unsigned int));
+		len = ft_unsigned(va_arg(arg, unsigned int));
 	if (format == 'x' || format == 'X')
-		len = ft_hexadecimal(arg, format);
+		len = ft_hex(arg, format);
 	if (format == '%')
 		len = ft_putchar('%');
 	return (len);
