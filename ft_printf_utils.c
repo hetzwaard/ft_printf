@@ -79,4 +79,3 @@ int	ft_putptr(va_list arg)
 		return (ft_putstr("(nil)"));
 	return (write(1, "0x", 2) + ft_putpos(p, 'p'));
 }
-

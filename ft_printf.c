@@ -14,50 +14,50 @@
 
 static int	ft_format(va_list arg, char format)
 {
-	int	len;
+	int	count;
 
-	len = 0;
+	count = 0;
 	if (format == 'c')
-		len = ft_putchar(va_arg(arg, int));
+		count = ft_putchar(va_arg(arg, int));
 	if (format == 's')
-		len = ft_putstr(va_arg(arg, char *));
+		count = ft_putstr(va_arg(arg, char *));
 	if (format == 'p')
-		len = ft_putptr(arg);
+		count = ft_putptr(arg);
 	if (format == 'd' || format == 'i')
-		len = ft_putnbr(va_arg(arg, int));
+		count = ft_putnbr(va_arg(arg, int));
 	if (format == 'u')
-		len = ft_unsigned(va_arg(arg, unsigned int));
+		count = ft_unsigned(va_arg(arg, unsigned int));
 	if (format == 'x' || format == 'X')
-		len = ft_hex(arg, format);
+		count = ft_hex(arg, format);
 	if (format == '%')
-		len = ft_putchar('%');
-	return (len);
+		count = ft_putchar('%');
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	int		i;
-	int		len;
+	int		count;
 	va_list	args;
 
 	i = 0;
-	len = 0;
+	count = 0;
 	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			len += ft_format(args, format[i]);
+			count += ft_format(args, format[i]);
 		}
 		else
 		{
 			write(1, &format[i], 1);
 			if (format[i])
-				len++;
+				count++;
 		}
 		i++;
 	}
 	va_end(args);
-	return (len);
+	return (count);
 }
