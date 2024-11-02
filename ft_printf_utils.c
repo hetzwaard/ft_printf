@@ -6,7 +6,7 @@
 /*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/27 22:03:07 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/10/29 08:50:58 by mahkilic      ########   odam.nl         */
+/*   Updated: 2024/11/02 10:41:13 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_hex(va_list arg, const char c)
 	unsigned int	hex;
 
 	hex = va_arg(arg, unsigned int);
-	return (ft_position(hex, c));
+	return (ft_puthex(hex, c));
 }
 
 int	ft_putchar(int c)
@@ -48,7 +48,7 @@ int	ft_putnbr(int nb)
 	return (i);
 }
 
-int	ft_position(unsigned long int arg, const char c)
+int	ft_puthex(unsigned long int arg, const char c)
 {
 	int	i;
 	int	len;
@@ -56,7 +56,7 @@ int	ft_position(unsigned long int arg, const char c)
 	len = 0;
 	i = arg % 16;
 	if (arg >= 16)
-		len += ft_position(arg / 16, c);
+		len += ft_puthex(arg / 16, c);
 	if (i < 10)
 		i += 48;
 	else
@@ -77,5 +77,5 @@ int	ft_putptr(va_list arg)
 	p = va_arg(arg, unsigned long int);
 	if (p == 0)
 		return (ft_putstr("(nil)"));
-	return (write(1, "0x", 2) + ft_position(p, 'p'));
+	return (write(1, "0x", 2) + ft_puthex(p, 'p'));
 }
