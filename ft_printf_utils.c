@@ -6,19 +6,11 @@
 /*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/27 22:03:07 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/11/07 19:56:40 by mahkilic      ########   odam.nl         */
+/*   Updated: 2024/11/14 00:16:21 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_hex(va_list arg, const char c)
-{
-	unsigned int	hex;
-
-	hex = va_arg(arg, unsigned int);
-	return (ft_puthex(hex, c));
-}
 
 int	ft_putchar(int c)
 {
@@ -46,6 +38,14 @@ int	ft_putnbr(int nb)
 	n = nb % 10 + 48;
 	i += write(1, &n, 1);
 	return (i);
+}
+
+int	ft_hex(va_list arg, const char c)
+{
+	unsigned int	hex;
+
+	hex = va_arg(arg, unsigned int);
+	return (ft_puthex(hex, c));
 }
 
 int	ft_puthex(unsigned long int arg, const char c)
