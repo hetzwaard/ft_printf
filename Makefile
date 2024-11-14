@@ -3,20 +3,21 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: mahkilic <mahkilic@student.42.fr>            +#+                      #
+#    By: mahkilic <mahkilic@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/10/08 19:45:43 by mahkilic      #+#    #+#                  #
-#    Updated: 2024/11/02 11:12:44 by mahkilic      ########   odam.nl          #
+#    Created: 2024/11/11 12:18:30 by mahkilic      #+#    #+#                  #
+#    Updated: 2024/11/11 12:18:30 by mahkilic      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf_utils.c ft_printf_utils2.c ft_printf.c
+SRCS = ft_printf.c ft_printf_utils.c ft_printf_utils2.c
 
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)

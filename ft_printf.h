@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_printf.h                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
+/*   By: mahkilic <mahkilic@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/26 19:43:06 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/11/09 23:12:22 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/11/11 11:29:56 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/11/11 11:29:56 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 int		ft_printf(const char *format, ...);
 

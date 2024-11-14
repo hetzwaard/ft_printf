@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_printf_utils.c                                  :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
+/*   By: mahkilic <mahkilic@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/27 22:03:07 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/11/14 00:16:21 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/11/11 11:32:02 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/11/11 11:32:02 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

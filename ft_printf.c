@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_printf.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
+/*   By: mahkilic <mahkilic@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/26 19:37:34 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/11/13 20:42:31 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/11/11 11:31:21 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/11/11 11:31:21 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,13 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
+//int main(void)
+//{
+//	ft_printf("hello my name is %s and I am %d years old\n", "Mahmut", 19);
+//	printf("hello my name is %s and I am %d years old\n", "Mahmut", 19);
+//}
+
+/*gcc ft_printf.c ft_printf_utils.c ft_printf_utils2.c -o ft_printf
+&& ./ft_printf && rm -rf ft_printf
+*/

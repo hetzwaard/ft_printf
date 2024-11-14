@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_printf_utils2.c                                 :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mahkilic <mahkilic@student.42.fr>            +#+                     */
+/*   By: mahkilic <mahkilic@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/27 22:04:57 by mahkilic      #+#    #+#                 */
-/*   Updated: 2024/11/14 00:18:46 by mahkilic      ########   odam.nl         */
+/*   Created: 2024/11/11 11:39:14 by mahkilic      #+#    #+#                 */
+/*   Updated: 2024/11/11 11:39:14 by mahkilic      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_strlen(const char *s)
 	if (s == NULL)
 		return (0);
 	i = 0;
-	while (s[i])
+	while (s[i] != 0)
 		i++;
 	return (i);
 }
@@ -42,9 +42,7 @@ int	ft_unsigned(unsigned int nb)
 
 	i = 0;
 	if (nb >= 10)
-	{
 		i += ft_unsigned(nb / 10);
-	}
 	n = nb % 10 + 48;
 	i += write(1, &n, 1);
 	return (i);
